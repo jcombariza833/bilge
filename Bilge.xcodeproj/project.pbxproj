@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A01E63C26F26C5400666A44 /* BilgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E63B26F26C5400666A44 /* BilgeApp.swift */; };
+		2A01E63E26F26C5400666A44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E63D26F26C5400666A44 /* ContentView.swift */; };
+		2A01E64026F26C5500666A44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A01E63F26F26C5500666A44 /* Assets.xcassets */; };
+		2A01E64326F26C5500666A44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A01E64226F26C5500666A44 /* Preview Assets.xcassets */; };
+		2A01E64526F26C5500666A44 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E64426F26C5500666A44 /* Persistence.swift */; };
+		2A01E64826F26C5500666A44 /* Bilge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E64626F26C5500666A44 /* Bilge.xcdatamodeld */; };
+		2A01E65326F26C5500666A44 /* BilgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E65226F26C5500666A44 /* BilgeTests.swift */; };
+		2A01E65E26F26C5500666A44 /* BilgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E65D26F26C5500666A44 /* BilgeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A01E64F26F26C5500666A44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A01E63026F26C5400666A44 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A01E63726F26C5400666A44;
+			remoteInfo = Bilge;
+		};
+		2A01E65A26F26C5500666A44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A01E63026F26C5400666A44 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A01E63726F26C5400666A44;
+			remoteInfo = Bilge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2A01E63826F26C5400666A44 /* Bilge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bilge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A01E63B26F26C5400666A44 /* BilgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilgeApp.swift; sourceTree = "<group>"; };
+		2A01E63D26F26C5400666A44 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2A01E63F26F26C5500666A44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A01E64226F26C5500666A44 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2A01E64426F26C5500666A44 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		2A01E64726F26C5500666A44 /* Bilge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bilge.xcdatamodel; sourceTree = "<group>"; };
+		2A01E64926F26C5500666A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A01E64E26F26C5500666A44 /* BilgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BilgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A01E65226F26C5500666A44 /* BilgeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilgeTests.swift; sourceTree = "<group>"; };
+		2A01E65426F26C5500666A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A01E65926F26C5500666A44 /* BilgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BilgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A01E65D26F26C5500666A44 /* BilgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilgeUITests.swift; sourceTree = "<group>"; };
+		2A01E65F26F26C5500666A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A01E63526F26C5400666A44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A01E64B26F26C5500666A44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A01E65626F26C5500666A44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A01E62F26F26C5400666A44 = {
+			isa = PBXGroup;
+			children = (
+				2A01E63A26F26C5400666A44 /* Bilge */,
+				2A01E65126F26C5500666A44 /* BilgeTests */,
+				2A01E65C26F26C5500666A44 /* BilgeUITests */,
+				2A01E63926F26C5400666A44 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A01E63926F26C5400666A44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A01E63826F26C5400666A44 /* Bilge.app */,
+				2A01E64E26F26C5500666A44 /* BilgeTests.xctest */,
+				2A01E65926F26C5500666A44 /* BilgeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A01E63A26F26C5400666A44 /* Bilge */ = {
+			isa = PBXGroup;
+			children = (
+				2A01E63B26F26C5400666A44 /* BilgeApp.swift */,
+				2A01E63D26F26C5400666A44 /* ContentView.swift */,
+				2A01E63F26F26C5500666A44 /* Assets.xcassets */,
+				2A01E64426F26C5500666A44 /* Persistence.swift */,
+				2A01E64926F26C5500666A44 /* Info.plist */,
+				2A01E64626F26C5500666A44 /* Bilge.xcdatamodeld */,
+				2A01E64126F26C5500666A44 /* Preview Content */,
+			);
+			path = Bilge;
+			sourceTree = "<group>";
+		};
+		2A01E64126F26C5500666A44 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2A01E64226F26C5500666A44 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2A01E65126F26C5500666A44 /* BilgeTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A01E65226F26C5500666A44 /* BilgeTests.swift */,
+				2A01E65426F26C5500666A44 /* Info.plist */,
+			);
+			path = BilgeTests;
+			sourceTree = "<group>";
+		};
+		2A01E65C26F26C5500666A44 /* BilgeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2A01E65D26F26C5500666A44 /* BilgeUITests.swift */,
+				2A01E65F26F26C5500666A44 /* Info.plist */,
+			);
+			path = BilgeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A01E63726F26C5400666A44 /* Bilge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A01E66226F26C5500666A44 /* Build configuration list for PBXNativeTarget "Bilge" */;
+			buildPhases = (
+				2A01E63426F26C5400666A44 /* Sources */,
+				2A01E63526F26C5400666A44 /* Frameworks */,
+				2A01E63626F26C5400666A44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bilge;
+			productName = Bilge;
+			productReference = 2A01E63826F26C5400666A44 /* Bilge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A01E64D26F26C5500666A44 /* BilgeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A01E66526F26C5500666A44 /* Build configuration list for PBXNativeTarget "BilgeTests" */;
+			buildPhases = (
+				2A01E64A26F26C5500666A44 /* Sources */,
+				2A01E64B26F26C5500666A44 /* Frameworks */,
+				2A01E64C26F26C5500666A44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A01E65026F26C5500666A44 /* PBXTargetDependency */,
+			);
+			name = BilgeTests;
+			productName = BilgeTests;
+			productReference = 2A01E64E26F26C5500666A44 /* BilgeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2A01E65826F26C5500666A44 /* BilgeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A01E66826F26C5500666A44 /* Build configuration list for PBXNativeTarget "BilgeUITests" */;
+			buildPhases = (
+				2A01E65526F26C5500666A44 /* Sources */,
+				2A01E65626F26C5500666A44 /* Frameworks */,
+				2A01E65726F26C5500666A44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A01E65B26F26C5500666A44 /* PBXTargetDependency */,
+			);
+			name = BilgeUITests;
+			productName = BilgeUITests;
+			productReference = 2A01E65926F26C5500666A44 /* BilgeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A01E63026F26C5400666A44 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					2A01E63726F26C5400666A44 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					2A01E64D26F26C5500666A44 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 2A01E63726F26C5400666A44;
+					};
+					2A01E65826F26C5500666A44 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 2A01E63726F26C5400666A44;
+					};
+				};
+			};
+			buildConfigurationList = 2A01E63326F26C5400666A44 /* Build configuration list for PBXProject "Bilge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A01E62F26F26C5400666A44;
+			productRefGroup = 2A01E63926F26C5400666A44 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A01E63726F26C5400666A44 /* Bilge */,
+				2A01E64D26F26C5500666A44 /* BilgeTests */,
+				2A01E65826F26C5500666A44 /* BilgeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A01E63626F26C5400666A44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A01E64326F26C5500666A44 /* Preview Assets.xcassets in Resources */,
+				2A01E64026F26C5500666A44 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A01E64C26F26C5500666A44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A01E65726F26C5500666A44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A01E63426F26C5400666A44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A01E64526F26C5500666A44 /* Persistence.swift in Sources */,
+				2A01E64826F26C5500666A44 /* Bilge.xcdatamodeld in Sources */,
+				2A01E63E26F26C5400666A44 /* ContentView.swift in Sources */,
+				2A01E63C26F26C5400666A44 /* BilgeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A01E64A26F26C5500666A44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A01E65326F26C5500666A44 /* BilgeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A01E65526F26C5500666A44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A01E65E26F26C5500666A44 /* BilgeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A01E65026F26C5500666A44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A01E63726F26C5400666A44 /* Bilge */;
+			targetProxy = 2A01E64F26F26C5500666A44 /* PBXContainerItemProxy */;
+		};
+		2A01E65B26F26C5500666A44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A01E63726F26C5400666A44 /* Bilge */;
+			targetProxy = 2A01E65A26F26C5500666A44 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2A01E66026F26C5500666A44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2A01E66126F26C5500666A44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A01E66326F26C5500666A44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Bilge/Preview Content\"";
+				DEVELOPMENT_TEAM = W8HX5M6262;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Bilge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jcombariza.Bilge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A01E66426F26C5500666A44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Bilge/Preview Content\"";
+				DEVELOPMENT_TEAM = W8HX5M6262;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Bilge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jcombariza.Bilge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2A01E66626F26C5500666A44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8HX5M6262;
+				INFOPLIST_FILE = BilgeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jcombariza.BilgeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bilge.app/Bilge";
+			};
+			name = Debug;
+		};
+		2A01E66726F26C5500666A44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8HX5M6262;
+				INFOPLIST_FILE = BilgeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jcombariza.BilgeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bilge.app/Bilge";
+			};
+			name = Release;
+		};
+		2A01E66926F26C5500666A44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8HX5M6262;
+				INFOPLIST_FILE = BilgeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jcombariza.BilgeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Bilge;
+			};
+			name = Debug;
+		};
+		2A01E66A26F26C5500666A44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8HX5M6262;
+				INFOPLIST_FILE = BilgeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jcombariza.BilgeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Bilge;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A01E63326F26C5400666A44 /* Build configuration list for PBXProject "Bilge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A01E66026F26C5500666A44 /* Debug */,
+				2A01E66126F26C5500666A44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A01E66226F26C5500666A44 /* Build configuration list for PBXNativeTarget "Bilge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A01E66326F26C5500666A44 /* Debug */,
+				2A01E66426F26C5500666A44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A01E66526F26C5500666A44 /* Build configuration list for PBXNativeTarget "BilgeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A01E66626F26C5500666A44 /* Debug */,
+				2A01E66726F26C5500666A44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A01E66826F26C5500666A44 /* Build configuration list for PBXNativeTarget "BilgeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A01E66926F26C5500666A44 /* Debug */,
+				2A01E66A26F26C5500666A44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2A01E64626F26C5500666A44 /* Bilge.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2A01E64726F26C5500666A44 /* Bilge.xcdatamodel */,
+			);
+			currentVersion = 2A01E64726F26C5500666A44 /* Bilge.xcdatamodel */;
+			path = Bilge.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2A01E63026F26C5400666A44 /* Project object */;
+}
