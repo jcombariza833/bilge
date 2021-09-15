@@ -12,9 +12,11 @@ struct BilgeApp: App {
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
-        WindowGroup {
+        let model = AppModel()
+        
+        return WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(model)
         }
     }
 }

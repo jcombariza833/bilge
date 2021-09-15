@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2A01E63C26F26C5400666A44 /* BilgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E63B26F26C5400666A44 /* BilgeApp.swift */; };
-		2A01E63E26F26C5400666A44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E63D26F26C5400666A44 /* ContentView.swift */; };
+		2A01E63E26F26C5400666A44 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E63D26F26C5400666A44 /* ContentView2.swift */; };
 		2A01E64026F26C5500666A44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A01E63F26F26C5500666A44 /* Assets.xcassets */; };
 		2A01E64326F26C5500666A44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A01E64226F26C5500666A44 /* Preview Assets.xcassets */; };
 		2A01E64526F26C5500666A44 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E64426F26C5500666A44 /* Persistence.swift */; };
 		2A01E64826F26C5500666A44 /* Bilge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E64626F26C5500666A44 /* Bilge.xcdatamodeld */; };
 		2A01E65326F26C5500666A44 /* BilgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E65226F26C5500666A44 /* BilgeTests.swift */; };
 		2A01E65E26F26C5500666A44 /* BilgeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E65D26F26C5500666A44 /* BilgeUITests.swift */; };
+		2A01E66D26F26C6700666A44 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E66C26F26C6700666A44 /* AppModel.swift */; };
+		2A01E66F26F26CBC00666A44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A01E66E26F26CBC00666A44 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,7 @@
 /* Begin PBXFileReference section */
 		2A01E63826F26C5400666A44 /* Bilge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bilge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A01E63B26F26C5400666A44 /* BilgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilgeApp.swift; sourceTree = "<group>"; };
-		2A01E63D26F26C5400666A44 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2A01E63D26F26C5400666A44 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		2A01E63F26F26C5500666A44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A01E64226F26C5500666A44 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A01E64426F26C5500666A44 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		2A01E65926F26C5500666A44 /* BilgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BilgeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A01E65D26F26C5500666A44 /* BilgeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilgeUITests.swift; sourceTree = "<group>"; };
 		2A01E65F26F26C5500666A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A01E66C26F26C6700666A44 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		2A01E66E26F26CBC00666A44 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +103,15 @@
 		2A01E63A26F26C5400666A44 /* Bilge */ = {
 			isa = PBXGroup;
 			children = (
+				2A01E66B26F26C5C00666A44 /* model */,
 				2A01E63B26F26C5400666A44 /* BilgeApp.swift */,
-				2A01E63D26F26C5400666A44 /* ContentView.swift */,
+				2A01E63D26F26C5400666A44 /* ContentView2.swift */,
 				2A01E63F26F26C5500666A44 /* Assets.xcassets */,
 				2A01E64426F26C5500666A44 /* Persistence.swift */,
 				2A01E64926F26C5500666A44 /* Info.plist */,
 				2A01E64626F26C5500666A44 /* Bilge.xcdatamodeld */,
 				2A01E64126F26C5500666A44 /* Preview Content */,
+				2A01E66E26F26CBC00666A44 /* ContentView.swift */,
 			);
 			path = Bilge;
 			sourceTree = "<group>";
@@ -134,6 +140,14 @@
 				2A01E65F26F26C5500666A44 /* Info.plist */,
 			);
 			path = BilgeUITests;
+			sourceTree = "<group>";
+		};
+		2A01E66B26F26C5C00666A44 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2A01E66C26F26C6700666A44 /* AppModel.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +281,9 @@
 			files = (
 				2A01E64526F26C5500666A44 /* Persistence.swift in Sources */,
 				2A01E64826F26C5500666A44 /* Bilge.xcdatamodeld in Sources */,
-				2A01E63E26F26C5400666A44 /* ContentView.swift in Sources */,
+				2A01E66F26F26CBC00666A44 /* ContentView.swift in Sources */,
+				2A01E63E26F26C5400666A44 /* ContentView2.swift in Sources */,
+				2A01E66D26F26C6700666A44 /* AppModel.swift in Sources */,
 				2A01E63C26F26C5400666A44 /* BilgeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
