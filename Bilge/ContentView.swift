@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
-    @EnvironmentObject var model: AppModel
+    @EnvironmentObject var store: AppStore
     
     var body: some View {
-        if model.isLoggedIn {
-            Text("Content")
+        if store.state.session.isLoggedIn {
+            HomeView()
         } else {
-            Text("OnBoarding")
+            OnBoardingView()
         }
     }
 }
@@ -22,6 +23,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(AppModel())
+            .environmentObject(AppStore.mock)
     }
 }

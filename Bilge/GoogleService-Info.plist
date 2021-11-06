@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>929112936190-dbhmeo8gtjcdgoiasgv9ebq13m0rfk1t.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.929112936190-dbhmeo8gtjcdgoiasgv9ebq13m0rfk1t</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCY7vqjYACMTq3MylgrED1qvxf2VSW8UvE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>929112936190</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>jcombariza.Bilge</string>
+	<key>PROJECT_ID</key>
+	<string>bilge-85236</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bilge-85236.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:929112936190:ios:bb68a01d366789bf815faf</string>
+</dict>
+</plist>
