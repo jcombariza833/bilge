@@ -15,7 +15,8 @@ func signUpReducer(state: inout SessionState, action: SignUpAction) -> Void {
     case .fetchSuccess(let user, let isStudent):
         state.fetchInProgress = false
         state.user = user
-        state.account.isStudent = isStudent
+        UserDefaults.standard.set(isStudent, forKey: "isStudent")
+        state.account.isStudent = UserDefaults.standard.bool(forKey: "isStudent")
     case .fetchError(let errorMessage):
         state.fetchInProgress = false
         state.fetchError = errorMessage

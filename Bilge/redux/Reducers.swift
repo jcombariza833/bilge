@@ -48,5 +48,11 @@ func sessionReducer(state: inout SessionState, action: SessionAction) -> Void {
     case .signOutError(let error):
         state.signOutInProgress = false
         state.signOutError = error
+    case .fetchUser( _ ):
+        break
+    case .fetchUserSuccess( _ ):
+        break
+    case .fetchUserError(_):
+        break
     }
 }

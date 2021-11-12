@@ -54,7 +54,11 @@
 		2AED239627370BA30022F108 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2AED239527370BA30022F108 /* FirebaseStorage */; };
 		2AED239827370BA30022F108 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 2AED239727370BA30022F108 /* FirebaseStorageCombine-Community */; };
 		2AED239A27370BA30022F108 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 2AED239927370BA30022F108 /* FirebaseStorageSwift-Beta */; };
-		2AED239D273723D80022F108 /* Thunder in Frameworks */ = {isa = PBXBuildFile; productRef = 2AED239C273723D80022F108 /* Thunder */; };
+		2AED23A927372C660022F108 /* Thunder in Frameworks */ = {isa = PBXBuildFile; productRef = 2AED23A827372C660022F108 /* Thunder */; };
+		2AED23AB27373FCF0022F108 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED23AA27373FCF0022F108 /* Response.swift */; };
+		2AED23AE273740F70022F108 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED23AD273740F70022F108 /* Models.swift */; };
+		2AED23B22737426E0022F108 /* UserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED23B12737426E0022F108 /* UserQuery.swift */; };
+		2AED23B5273ED9530022F108 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 2AED23B4273ED9530022F108 /* Apollo */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +123,9 @@
 		2A37A4C6270F9541007C1868 /* StudentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentView.swift; sourceTree = "<group>"; };
 		2A37A4C8270F955F007C1868 /* TeacherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherView.swift; sourceTree = "<group>"; };
 		2ADA7B4B26F9700E0000E92F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		2AED23AA27373FCF0022F108 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		2AED23AD273740F70022F108 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		2AED23B12737426E0022F108 /* UserQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AED238727370AB10022F108 /* MyComponents in Frameworks */,
+				2AED23B5273ED9530022F108 /* Apollo in Frameworks */,
 				2AED238E27370BA30022F108 /* FirebaseFirestore in Frameworks */,
 				2AED238C27370BA30022F108 /* FirebaseAuthCombine-Community in Frameworks */,
 				2AED239427370BA30022F108 /* FirebaseRemoteConfig in Frameworks */,
@@ -135,7 +143,7 @@
 				2AED239627370BA30022F108 /* FirebaseStorage in Frameworks */,
 				2AED239027370BA30022F108 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				2AED239827370BA30022F108 /* FirebaseStorageCombine-Community in Frameworks */,
-				2AED239D273723D80022F108 /* Thunder in Frameworks */,
+				2AED23A927372C660022F108 /* Thunder in Frameworks */,
 				2AED238A27370BA30022F108 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +280,10 @@
 		2A263DA32735C3FE00DD53F8 /* netwrok */ = {
 			isa = PBXGroup;
 			children = (
+				2AED23AF2737422A0022F108 /* variables */,
+				2AED23AC273740DB0022F108 /* data */,
 				2A263DA42735C41E00DD53F8 /* API.swift */,
+				2AED23AA27373FCF0022F108 /* Response.swift */,
 			);
 			path = netwrok;
 			sourceTree = "<group>";
@@ -351,6 +362,30 @@
 			path = authentication;
 			sourceTree = "<group>";
 		};
+		2AED23AC273740DB0022F108 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				2AED23AD273740F70022F108 /* Models.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		2AED23AF2737422A0022F108 /* variables */ = {
+			isa = PBXGroup;
+			children = (
+				2AED23B0273742630022F108 /* user */,
+			);
+			path = variables;
+			sourceTree = "<group>";
+		};
+		2AED23B0273742630022F108 /* user */ = {
+			isa = PBXGroup;
+			children = (
+				2AED23B12737426E0022F108 /* UserQuery.swift */,
+			);
+			path = user;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -378,7 +413,8 @@
 				2AED239527370BA30022F108 /* FirebaseStorage */,
 				2AED239727370BA30022F108 /* FirebaseStorageCombine-Community */,
 				2AED239927370BA30022F108 /* FirebaseStorageSwift-Beta */,
-				2AED239C273723D80022F108 /* Thunder */,
+				2AED23A827372C660022F108 /* Thunder */,
+				2AED23B4273ED9530022F108 /* Apollo */,
 			);
 			productName = Bilge;
 			productReference = 2A01E63826F26C5400666A44 /* Bilge.app */;
@@ -454,7 +490,8 @@
 			packageReferences = (
 				2AED238527370AB10022F108 /* XCRemoteSwiftPackageReference "MyComponents" */,
 				2AED238827370BA30022F108 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				2AED239B273723D70022F108 /* XCRemoteSwiftPackageReference "Thunder" */,
+				2AED23A727372C650022F108 /* XCRemoteSwiftPackageReference "Thunder" */,
+				2AED23B3273ED9520022F108 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 			);
 			productRefGroup = 2A01E63926F26C5400666A44 /* Products */;
 			projectDirPath = "";
@@ -506,6 +543,7 @@
 				2A37A4C5270F9512007C1868 /* HomeView.swift in Sources */,
 				2A01E64526F26C5500666A44 /* Persistence.swift in Sources */,
 				2A37A4B0270EB21C007C1868 /* Listeners.swift in Sources */,
+				2AED23AB27373FCF0022F108 /* Response.swift in Sources */,
 				2A01E64826F26C5500666A44 /* Bilge.xcdatamodeld in Sources */,
 				2A1AFF1C2707F916004623FA /* Store.swift in Sources */,
 				2A37A4AE270EAA06007C1868 /* Auth+Combine.swift in Sources */,
@@ -518,6 +556,7 @@
 				2A37A4BC270F5788007C1868 /* ForgotPasswordState.swift in Sources */,
 				2A37A4A8270E45F7007C1868 /* SignInAction.swift in Sources */,
 				2A01E63E26F26C5400666A44 /* ContentView2.swift in Sources */,
+				2AED23B22737426E0022F108 /* UserQuery.swift in Sources */,
 				2A37A4B8270F550E007C1868 /* ForgotPasswordAction.swift in Sources */,
 				2A37A4BA270F5719007C1868 /* ForgotPassworReducer.swift in Sources */,
 				2A01E67426F2E6D500666A44 /* SignInView.swift in Sources */,
@@ -528,6 +567,7 @@
 				2A37A4B5270F3E4F007C1868 /* SignUpReducer.swift in Sources */,
 				2A1AFF252708C150004623FA /* Reducers.swift in Sources */,
 				2A01E68726F66F2100666A44 /* ForgotPasswordView.swift in Sources */,
+				2AED23AE273740F70022F108 /* Models.swift in Sources */,
 				2A1AFF272708C83F004623FA /* Middlewares.swift in Sources */,
 				2A263DA52735C41E00DD53F8 /* API.swift in Sources */,
 				2A01E63C26F26C5400666A44 /* BilgeApp.swift in Sources */,
@@ -868,12 +908,20 @@
 				minimumVersion = 8.0.0;
 			};
 		};
-		2AED239B273723D70022F108 /* XCRemoteSwiftPackageReference "Thunder" */ = {
+		2AED23A727372C650022F108 /* XCRemoteSwiftPackageReference "Thunder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jcombariza833/Thunder";
 			requirement = {
 				branch = main;
 				kind = branch;
+			};
+		};
+		2AED23B3273ED9520022F108 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -929,10 +977,15 @@
 			package = 2AED238827370BA30022F108 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageSwift-Beta";
 		};
-		2AED239C273723D80022F108 /* Thunder */ = {
+		2AED23A827372C660022F108 /* Thunder */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2AED239B273723D70022F108 /* XCRemoteSwiftPackageReference "Thunder" */;
+			package = 2AED23A727372C650022F108 /* XCRemoteSwiftPackageReference "Thunder" */;
 			productName = Thunder;
+		};
+		2AED23B4273ED9530022F108 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AED23B3273ED9520022F108 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
 		};
 /* End XCSwiftPackageProductDependency section */
 

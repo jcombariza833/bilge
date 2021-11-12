@@ -31,4 +31,10 @@ enum SessionAction {
     case signOut
     case signOutSuccess
     case signOutError(errorMessage)
+    
+    typealias email = String
+    typealias userData = Response<Student>
+    case fetchUser(email)
+    case fetchUserSuccess(userData)
+    case fetchUserError(errorMessage)
 }

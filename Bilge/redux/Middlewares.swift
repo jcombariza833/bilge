@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import Combine
+import Thunder
 
 func authenticationMiddleware(_ authenticationManager: AuthenticationService) -> Middleware<AppState, AppAction> {
     return { state, action in
@@ -93,3 +94,35 @@ func authenticationMiddleware(_ authenticationManager: AuthenticationService) ->
 }
 
 
+func apiMiddleware() -> Middleware<AppState, AppAction> {
+    return { state, action in
+        switch action {
+        case .session(.fetchUser(let email)):
+            
+            let payload = API<UserVariable>.user(UserVariable(email: email)).payload()
+            let request = API.request(payload: payload, token: state.session.token)
+            
+            return Thunder.send(model: Response<Student>.self, request)
+                .subscribe(on: DispatchQueue.main)
+                .map {
+                    .session(.fetchUserSuccess($0))
+                }.catch { (error: RequestError) -> Just<AppAction> in
+                    switch error {
+                    case .unableToMakeRequest:
+                        return Just(.session(.fetchUserError("unable to make request")))
+                    case .requestFailed( let code):
+                        return Just(.session(.fetchUserError("request failed with code: \(code)")))
+                    case .invalidResponse:
+                        return Just(.session(.fetchUserError("invalid response")))
+                    case .emptyResponse:
+                        return Just(.session(.fetchUserError("empty response")))
+                    }
+                }.eraseToAnyPublisher()
+
+        default:
+            break
+        }
+        
+        return Empty().eraseToAnyPublisher()
+    }
+}

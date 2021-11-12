@@ -6,53 +6,60 @@
 //
 
 import Foundation
+import Thunder
 
-enum RequestErrors: Error {
-    case networkError(String)
-}
-
-struct APIError: Codable {
-    var message: String
-    var locations: [Location]
+enum API<T: Variable> {
+    case user(Variable)
     
-}
-
-struct Location: Codable {
-    var line: Int
-    var column: Int
-}
-
-struct Response<T: Codable>: Codable {
-    var data: T?
-    var errors: [APIError]?
-}
-
-protocol Query where V: Codable  {
-    associatedtype V
-    var raw: String { get }
-    var variables: V? { get set }
+    func payload() -> Payload<T> {
+        switch self {
+        case .user(let variables):
+            return Payload<T>(query: self.query(), variables: variables as? T)
+        }
+    }
     
+    private func query() -> String {
+        switch self {
+        case .user:
+            return """
+                query UserQuery($email: String!) {
+                    user(email: $email)
+                }
+            """
+        }
+    }
+    
+    static func request(payload: Payload<T>, token: String) -> URLRequest {
+        return  RequestBuilder(url: url())
+                    .addHttpMethod(.post)
+                    .addAllHTTPHeaderFields(["Content-Type": "application/json",
+                                             "Accept": "application/json",
+                                             "Authorization": "Bearer " + token])
+                    .addHttpBody(Thunder.parserToData(from: payload)!)
+                    .build()
+    }
+    
+    private static func url() -> URL {
+        var components = URLComponents()
+        components.scheme = "http"
+        components.host = "localhost"
+        components.port = 5001
+        components.path = "/bilge-85236/us-central1/graphql"
+        
+        return components.url!
+    }
 }
 
 protocol Variable: Codable {}
 
-struct UserVariable: Variable {
-    var email: String
+protocol RequestGraphQl: Codable {
+    associatedtype V: Variable
+    
+    var query: String { get }
+    var variables: V? { get set }
 }
 
-struct UserQuery<T: Variable>: Query {
-    
-    typealias V = T
-    
-    var raw: String  = """
-        query UserQuery($email: String!) {
-            user(email: $email)
-        }
-    """
-    var variables: T?
-}
-
-struct Payload<T: Codable>: Codable {
-    var variables: T?
+struct Payload<T: Variable>: RequestGraphQl {
     var query: String
+    var variables: T?
 }

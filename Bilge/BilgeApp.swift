@@ -17,6 +17,7 @@ struct BilgeApp: App {
     }
 
     var body: some Scene {
+        UserDefaults.standard.register(defaults: ["isStudent" : false])
         let authenticationManager = AuthenticationManager()
         
         let appState = AppState(session: SessionState(account: AccountState()),
@@ -24,7 +25,8 @@ struct BilgeApp: App {
         
         let appStore = AppStore(initial: appState,
                                 reducer: appReducer,
-                                middlewares: [authenticationMiddleware(authenticationManager)],
+                                middlewares: [authenticationMiddleware(authenticationManager),
+                                             apiMiddleware()],
                                 listeners: [loginStatusListener()])
         
         return WindowGroup {

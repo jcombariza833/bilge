@@ -8,5 +8,6 @@
 import Foundation
 
 struct AccountState {
-    var isStudent = false
+    var isStudent = UserDefaults.standard.bool(forKey: "isStudent")
+    var username = ""
 }
