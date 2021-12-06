@@ -9,12 +9,21 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var store: AppStore
+    private var role = UserDefaults.standard.bool(forKey: "isStudent")
     
     var body: some View {
-        if store.state.session.account.isStudent {
-            StudentView()
-        } else {
-           TeacherView()
+        ZStack {
+            if role {
+                StudentView()
+            } else {
+                TeacherView()
+            }
+        }.onAppear {
+            if role {
+                store.dispatch(.api(.getStudent(.get)))
+            } else {
+                store.dispatch(.api(.getInstructor(.get)))
+            }
         }
     }
 }

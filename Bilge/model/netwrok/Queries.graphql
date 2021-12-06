@@ -1,0 +1,174 @@
+query Instructors {
+    instructors {
+        name {
+            fName
+            lName
+        }
+        username
+        email
+        role
+    }
+}
+
+query InstructorBy($username: String!) {
+    instructorBy(username: $username) {
+        name {
+            fName
+            lName
+        }
+        username
+        email
+        isEmailVerified
+        creationDate
+        role
+        courses {
+            name
+            description
+            code
+            sections {
+                isActive
+                code
+                schedule {
+                    day
+                    isActive
+                    classroom
+                }
+                maxStudents
+                syllabus
+            }
+        }
+    }
+}
+
+query Instructor {
+    instructor {
+        name {
+            fName
+            lName
+        }
+        username
+        email
+        isEmailVerified
+        creationDate
+        role
+        courses {
+            name
+            description
+            code
+            sections {
+                isActive
+                code
+                schedule {
+                    day
+                    isActive
+                    classroom
+                }
+                maxStudents
+                syllabus
+                files
+            }
+        }
+    }
+}
+
+query Students($sectionCode: String!) {
+    students(sectionCode: $sectionCode) {
+        name {
+            fName
+            lName
+        }
+        username
+        email
+        role
+    }
+}
+
+query Student {
+    student {
+        name {
+            fName
+            lName
+        }
+        username
+        email
+        isEmailVerified
+        creationDate
+        role
+        enrolled {
+            instructor {
+                    name {
+                        fName
+                        lName
+                    }
+                    username
+                    email
+                    role
+            }
+            course {
+                name
+                description
+                code
+            }
+            section {
+                isActive
+                code
+                schedule {
+                    day
+                    isActive
+                    classroom
+                }
+                maxStudents
+                syllabus
+                files
+            }
+        }
+    }
+}
+
+mutation UpdateRole($role: Role!) {
+    updateRole(role: $role)
+}
+
+mutation UpdateProfile($profile: ProfileInput!) {
+    updateProfile(profile: $profile)
+}
+
+mutation CreateCourse($course: CourseInput!){
+    createCourse(course: $course )
+}
+
+mutation DeleteCourse($courseCode: String!){
+    deleteCourse(courseCode: $courseCode )
+}
+
+mutation AddSection($section: SectionInput!, $courseCode: String!){
+    addSection(section: $section, courseCode: $courseCode)
+}
+
+mutation DeleteSection($sectionCode: String!, $courseCode: String!){
+    deleteSection(sectionCode: $sectionCode, courseCode: $courseCode)
+}
+
+mutation AddSyllabus($file: String!, $sectionCode: String!, $courseCode: String!){
+    addSyllabus(file: $file, sectionCode: $sectionCode, courseCode: $courseCode)
+}
+
+mutation DeleteSyllabus($sectionCode: String!, $courseCode: String!){
+    deleteSyllabus(sectionCode: $sectionCode, courseCode: $courseCode)
+}
+
+mutation AddFiles($files: [String]!, $sectionCode: String!, $courseCode: String!){
+    addFiles(files: $files, sectionCode: $sectionCode, courseCode: $courseCode)
+}
+
+mutation DeleteFiles($files: [String]!, $sectionCode: String!, $courseCode: String!){
+    deleteFiles(files: $files, sectionCode: $sectionCode, courseCode: $courseCode)
+}
+
+mutation Enroll($instructorUsername: String!, $sectionCode: String!, $courseCode: String!) {
+    enroll(instructorUsername: $instructorUsername, sectionCode: $sectionCode, courseCode: $courseCode)
+}
+
+mutation Unenroll($sectionCode: String!) {
+    unenroll(sectionCode: $sectionCode)
+}

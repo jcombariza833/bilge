@@ -10,11 +10,10 @@ import Firebase
 import Combine
 
 func loginStatusListener() -> Listener<AppState, AppAction> {
-    Auth.auth()
     return { state in
         return Auth.auth().iDTokenDidChangePublisher
             .map {
-                .session(.updateLogginStatus($0 != nil, $0))
+                .session(.token($0))
             }
             .eraseToAnyPublisher()
     }

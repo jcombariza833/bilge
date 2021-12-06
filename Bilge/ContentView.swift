@@ -12,7 +12,7 @@ struct ContentView: View {
     @EnvironmentObject var store: AppStore
     
     var body: some View {
-        if store.state.session.isLoggedIn {
+        if !store.state.session.token.isEmpty {
             HomeView()
         } else {
             OnBoardingView()

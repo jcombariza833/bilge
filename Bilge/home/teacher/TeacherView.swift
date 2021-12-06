@@ -7,21 +7,13 @@
 
 import SwiftUI
 import Firebase
+import Combine
 
 struct TeacherView: View {
     @EnvironmentObject var store: AppStore
+    
     var body: some View {
-        VStack {
-            Text("Teacher")
-            Button("log out") {
-                let firebaseAuth = Auth.auth()
-               do {
-                 try firebaseAuth.signOut()
-               } catch let signOutError as NSError {
-                 print("Error signing out: %@", signOutError)
-               }
-            }
-        }
+        TeacherTapView()
     }
 }
 

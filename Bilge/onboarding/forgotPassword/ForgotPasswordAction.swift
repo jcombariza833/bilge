@@ -8,7 +8,8 @@
 import Foundation
 
 enum ForgotPasswordAction {
-    typealias payload = (String)
+    typealias Email = String
+    typealias payload = (Email)
     typealias errorMessage = String?
     
     case fetch(payload)

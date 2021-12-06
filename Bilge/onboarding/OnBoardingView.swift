@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct OnBoardingView: View {
+    @EnvironmentObject var store: AppStore
     
     var body: some View {
-        SignInView()
+        if store.state.session.singIn.fetchInProgress {
+            ProgressView()
+        } else {
+            SignInView()
+        }
     }
 }
 

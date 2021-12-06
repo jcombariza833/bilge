@@ -11,5 +11,5 @@ import Firebase
 struct AppState {
     var session: SessionState
     var forgotPassword: ForgotPasswordState
-    
+    var api: APIState
 }

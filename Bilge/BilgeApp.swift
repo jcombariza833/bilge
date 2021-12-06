@@ -10,28 +10,36 @@ import Firebase
 
 @main
 struct BilgeApp: App {
-    let persistenceController = PersistenceController.shared
+    var pollManger = PollManger()
     
     init() {
         FirebaseApp.configure()
+        Auth.auth().useEmulator(withHost:"localhost", port:9099)
     }
 
     var body: some Scene {
-        UserDefaults.standard.register(defaults: ["isStudent" : false])
-        let authenticationManager = AuthenticationManager()
+        UserDefaults.standard.register(defaults: ["token" : "",
+                                                  "role":false,
+                                                  "isStudent": false]
+        )
+        let middlewareManager = MiddlewareManager()
+        let appStateFacrory = AppStateFactory()
         
-        let appState = AppState(session: SessionState(account: AccountState()),
-                                forgotPassword: ForgotPasswordState())
-        
-        let appStore = AppStore(initial: appState,
+        let appStore = AppStore(initial: appStateFacrory.createAppState(),
                                 reducer: appReducer,
-                                middlewares: [authenticationMiddleware(authenticationManager),
-                                             apiMiddleware()],
-                                listeners: [loginStatusListener()])
+                                middlewares: middlewareManager.middlewares,
+                                listeners: middlewareManager.listeners)
         
         return WindowGroup {
             ContentView()
                 .environmentObject(appStore)
+                .environmentObject(pollManger)
+                .onAppear {
+                    let polls = PersistenceController.shared.getAllPolls()
+                    let pollsMapped = polls.map {PollManger.invert($0)}
+                    
+                    print(pollsMapped)
+                }
         }
     }
 }

@@ -7,26 +7,14 @@
 
 import SwiftUI
 import Firebase
-import Thunder
 import Combine
 
 struct StudentView: View {
     @EnvironmentObject var store: AppStore
         
     var body: some View {
-        VStack {
-            Text("Student")
-            Button("log out") {
-                let firebaseAuth = Auth.auth()
-               do {
-                 try firebaseAuth.signOut()
-               } catch let signOutError as NSError {
-                 print("Error signing out: %@", signOutError)
-               }
-            }
-            Button("request ") {
-                store.dispatch(.session(.fetchUser("juan@gmail.com")))
-            }
+        StudentTapView().onAppear {
+            store.dispatch(.api(.getInstructors(.get)))
         }
     }
 }

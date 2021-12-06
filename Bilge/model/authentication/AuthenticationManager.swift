@@ -46,8 +46,26 @@ final class AuthenticationManager: AuthenticationService {
         }.eraseToAnyPublisher()
     }
     
-    func token(user: User) -> AnyPublisher<String,AuthError> {
+    func updatePassword(password: String) -> AnyPublisher<Void, AuthError> {
+        return Future<Void,AuthError> { promise in
+            guard let user = Auth.auth().currentUser else {
+                return promise(.failure(.firebaseError("user is not logged")))
+            }
+            user.updatePassword(to: password) { error in
+                if let error = error {
+                    return promise(.failure(.firebaseError(error.localizedDescription)))
+                }
+                return promise(.success(()))
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func token(user: User?) -> AnyPublisher<String,AuthError> {
         return Future<String, AuthError> { promise in
+            guard let user = user else {
+                return promise(.failure(.firebaseError("error retreaving id Token")))
+            }
+            
             user.getIDToken { token, error in
                 
                 guard let token = token, error == nil else {

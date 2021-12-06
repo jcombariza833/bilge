@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import MyComponents
 
 struct ForgotPasswordView: View {
     @State var email = ""
@@ -17,8 +16,8 @@ struct ForgotPasswordView: View {
     
     var body: some View {
         let resetErrorIsPresented =  Binding<Bool>(
-            get: { store.state.session.fetchError != nil },
-            set: { _ in store.dispatch(.login(.fetchError(nil))) }
+            get: { store.state.forgotPassword.fetchError != nil },
+            set: { _ in store.dispatch(.resetPassword(.fetchError(nil))) }
         )
         
         VStack {

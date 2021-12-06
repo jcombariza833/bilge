@@ -8,18 +8,43 @@
 import Foundation
 import Firebase
 
+enum RoleType: Codable {
+    case insturctor
+    case student
+    case admin
+    
+    func toApi() -> Role {
+        switch self {
+        case .insturctor:
+            return Role.student
+        case .student:
+            return Role.student
+        case .admin:
+            return Role.admin
+        }
+    }
+    
+    static func fromApi(role: Role) -> RoleType {
+        switch role {
+        case .student:
+            return RoleType.student
+        case .instructor:
+            return RoleType.insturctor
+        case .admin:
+            return RoleType.admin
+        case .__unknown(_):
+            return RoleType.student
+        }
+    }
+}
+
 struct SessionState {
-    var isLoggedIn = false
-    var user: User?
+    // MARK: - onboarding
+    var singUp: SignUpState
+    var singIn: SignInState
+    var uid = ""
+    var role = RoleType.insturctor
+    // MARK: - token
     var token = ""
-    var account: AccountState
-    
-    var fetchError: String?
-    var fetchInProgress: Bool = false
-    
-    var fetchAccessTokenError: String?
-    var fetchActionTokenInProgress: Bool = false
-    
-    var signOutError: String?
-    var signOutInProgress: Bool = false
+    // MARK: - token
 }

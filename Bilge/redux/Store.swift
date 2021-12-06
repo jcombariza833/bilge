@@ -54,7 +54,9 @@ class Store<State, Action>: ObservableObject {
 
 extension AppStore {
     static let mock = AppStore(initial:
-                                AppState(session: SessionState(account: AccountState()),
-                                        forgotPassword: ForgotPasswordState()),
+                                AppState(session: SessionState(singUp: SignUpState(),
+                                                               singIn: SignInState()),
+                                        forgotPassword: ForgotPasswordState(),
+                                         api: APIState(updateProfile: APIUpdateProfileState())),
                                reducer: appReducer(state:action:))
 }
