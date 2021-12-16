@@ -14,21 +14,25 @@ struct SearchCourseContentView: View {
     @State var enrollingInProgress = false
     
     var body: some View {
-        VStack {
-            List {
-                ForEach(searchResults) { instructor in
-                    SearchCellUsernameView(username: instructor.username)
-                }
-            }.searchable(text: $searchText)
-            
+        if searchResults.isEmpty {
+            Text("No instructors available")
+        } else {
+            VStack {
+                List {
+                    ForEach(searchResults) { instructor in
+                        SearchCellUsernameView(username: instructor.username)
+                    }
+                }.searchable(text: $searchText)
+                
+            }
         }
     }
     
     var searchResults: [InstructorM] {
         if searchText.isEmpty {
-            return store.state.api.instructors ?? [InstructorM]()
+            return store.state.api.instructors?.filter { !$0.username.isEmpty } ?? [InstructorM]()
         } else {
-            return store.state.api.instructors?.filter { $0.username.contains(searchText) } ?? [InstructorM]()
+            return store.state.api.instructors?.filter { $0.username.contains(searchText) && !$0.username.isEmpty } ?? [InstructorM]()
         }
     }
 }

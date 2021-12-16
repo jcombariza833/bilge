@@ -15,6 +15,8 @@ struct MultipleChoiceView: View {
     @State var isEditMode: EditMode = .active
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     let component: MultipleChoice
+    let preview: Bool
+    var action: (() -> ())?
     
     var body: some View {
         VStack {
@@ -25,7 +27,12 @@ struct MultipleChoiceView: View {
                                 timeRemaining -= 1
                                 timeRunning += 1.0/Float(component.time)
                             } else {
-                                presentation.toggle()
+                                if !preview {
+                                    //presentation.toggle()
+                                    if let action = action {
+                                        action()
+                                    }
+                                }
                             }
                         }
             Spacer()
@@ -45,9 +52,15 @@ struct MultipleChoiceView: View {
                         
                         return [option: false]
                     }
-                    let feedback = MultipleChoiceFeedBack(vote: votes)
-                    //send feedback
-                    presentation.toggle()
+                    
+                    if !preview {
+                        let feedback = MultipleChoiceFeedBack(vote: votes)
+                        //send feedback
+                        //presentation.toggle()
+                        if let action = action {
+                            action()
+                        }
+                    }
                 }
             }
             Spacer()
@@ -55,6 +68,7 @@ struct MultipleChoiceView: View {
         .padding()
         .onAppear {
             timeRemaining = component.time
+            timeRunning = 0.0
         }
     }
 }
@@ -65,6 +79,6 @@ struct MultipleChoiceView_Previews: PreviewProvider {
         MultipleChoiceView(presentation: .constant(true),
                            component: MultipleChoice(question: "Which of the following are actually animals?",
                                                 time: 30,
-                                                options:["Dog", "Toaster", "Apple", "Cat"]))
+                                                     options:["Dog", "Toaster", "Apple", "Cat"]), preview: false)
     }
 }

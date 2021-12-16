@@ -10,10 +10,11 @@ import Firebase
 
 struct ContentView: View {
     @EnvironmentObject var store: AppStore
+    @StateObject var pollConnection = PollConnectionManager()
     
     var body: some View {
         if !store.state.session.token.isEmpty {
-            HomeView()
+            HomeView().environmentObject(pollConnection)
         } else {
             OnBoardingView()
         }

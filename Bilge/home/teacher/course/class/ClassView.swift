@@ -11,6 +11,7 @@ import Firebase
 struct ClassView: View {
     @EnvironmentObject var store: AppStore
     @StateObject var viewModel = ClassViewModel()
+    @EnvironmentObject var pollConnection: PollConnectionManager
     @State var showClassroom = false
     
     var course: CourseM
@@ -41,7 +42,7 @@ struct ClassView: View {
                     NavigationLink {
                         VStack {
                             Text("Grades Details")
-                            Text("Coming soons")
+                            Text("Coming soon")
                         }
                     } label: {
                         gradeCell
@@ -125,6 +126,7 @@ struct ClassView: View {
             viewModel.store = store
             viewModel.course = course
             viewModel.section = section
+            pollConnection.configuration(service: viewModel.service, username: viewModel.username)
         }
 
     }

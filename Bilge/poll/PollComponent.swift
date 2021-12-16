@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import RealmSwift
 
-enum PollComponentType: CaseIterable, Codable {
+enum PollComponentType: String, CaseIterable, Codable {
     case statement
     case multipleChoice
     case selection

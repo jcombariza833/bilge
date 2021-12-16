@@ -16,7 +16,7 @@ enum RoleType: Codable {
     func toApi() -> Role {
         switch self {
         case .insturctor:
-            return Role.student
+            return Role.instructor
         case .student:
             return Role.student
         case .admin:
@@ -44,7 +44,5 @@ struct SessionState {
     var singIn: SignInState
     var uid = ""
     var role = RoleType.insturctor
-    // MARK: - token
     var token = ""
-    // MARK: - token
 }

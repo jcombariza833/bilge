@@ -34,7 +34,8 @@ func authenticationMiddleware(_ authenticationManager: AuthenticationService) ->
             return authenticationManager.registration(email: email, password: password)
                 .subscribe(on: DispatchQueue.main)
                 .map {
-                    .registration(.fetchSuccess($0.uid, role))
+                    UserDefaults.standard.set(false, forKey: "role")
+                    return .registration(.fetchSuccess($0.uid, role))
                 }.catch { (error: AuthError) -> Just<AppAction> in
                     switch error {
                     case .firebaseError(let message):

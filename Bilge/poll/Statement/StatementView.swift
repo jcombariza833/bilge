@@ -10,6 +10,8 @@ import SwiftUI
 struct StatementView: View {
     @Binding var presentation: Bool
     let component: Statement
+    let preview: Bool
+    var action: (() -> ())?
     
     @State var timeRemaining = 0
     @State var timeRunning: Float = 0.0
@@ -25,7 +27,12 @@ struct StatementView: View {
                                 timeRemaining -= 1
                                 timeRunning += 1.0/Float(component.time)
                             } else {
-                                presentation.toggle()
+                                if !preview {
+                                    //presentation.toggle()
+                                    if let action = action {
+                                        action()
+                                    }
+                                }
                             }
                         }
 
@@ -36,9 +43,14 @@ struct StatementView: View {
                         color: .blue,
                         fullWidth: true) {
                     withAnimation(.easeInOut(duration: 0.4)) {
-                        let feedback = StatementFeedBack(vote: component.option1)
-                        //send feedback
-                        presentation.toggle()
+                        if !preview {
+                            let feedback = StatementFeedBack(vote: component.option1)
+                            //send feedback
+                            //presentation.toggle()
+                            if let action = action {
+                                action()
+                            }
+                        }
                     }
                 }
                 
@@ -47,9 +59,14 @@ struct StatementView: View {
                         color: .blue,
                         fullWidth: true) {
                     withAnimation(.easeInOut(duration: 0.4)) {
-                        let feedback = StatementFeedBack(vote: component.option2)
-                        //send feedback
-                        presentation.toggle()
+                        if !preview {
+                            let feedback = StatementFeedBack(vote: component.option2)
+                            //send feedback
+                            //presentation.toggle()
+                            if let action = action {
+                                action()
+                            }
+                        }
                     }
                 }
             }.padding()
@@ -58,6 +75,7 @@ struct StatementView: View {
         .padding()
         .onAppear {
             timeRemaining = component.time
+            timeRunning = 0.0
         }
     }
 }
@@ -68,6 +86,6 @@ struct StatementView_Previews: PreviewProvider {
                        component: Statement(question: "In winter when the temperature is the colldest,Is the sky red ?",
                                                                       option1: "True",
                                                                       option2: "False",
-                                                                      time: 30))
+                                            time: 30), preview: false)
     }
 }

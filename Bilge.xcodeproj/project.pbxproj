@@ -100,6 +100,10 @@
 		2ADEA384275DD82100DCC06B /* EnrolledCourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADEA383275DD82100DCC06B /* EnrolledCourseListView.swift */; };
 		2ADEA386275DD88F00DCC06B /* EnrolledCourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADEA385275DD88F00DCC06B /* EnrolledCourseListViewModel.swift */; };
 		2ADEA388275DE5DC00DCC06B /* StudentClassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADEA387275DE5DC00DCC06B /* StudentClassView.swift */; };
+		2ADEA38A275DF81B00DCC06B /* StudentWeekSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADEA389275DF81B00DCC06B /* StudentWeekSelectorView.swift */; };
+		2ADEA38D275DFA0100DCC06B /* PollConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADEA38C275DFA0100DCC06B /* PollConnectionManager.swift */; };
+		2ADEA38F275E06F400DCC06B /* StudentClassroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADEA38E275E06F400DCC06B /* StudentClassroomView.swift */; };
+		2ADEA392275EFF8800DCC06B /* AttendanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADEA391275EFF8800DCC06B /* AttendanceView.swift */; };
 		2AED238A27370BA30022F108 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2AED238927370BA30022F108 /* FirebaseAuth */; };
 		2AED238C27370BA30022F108 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 2AED238B27370BA30022F108 /* FirebaseAuthCombine-Community */; };
 		2AED238E27370BA30022F108 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2AED238D27370BA30022F108 /* FirebaseFirestore */; };
@@ -247,6 +251,10 @@
 		2ADEA383275DD82100DCC06B /* EnrolledCourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolledCourseListView.swift; sourceTree = "<group>"; };
 		2ADEA385275DD88F00DCC06B /* EnrolledCourseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrolledCourseListViewModel.swift; sourceTree = "<group>"; };
 		2ADEA387275DE5DC00DCC06B /* StudentClassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassView.swift; sourceTree = "<group>"; };
+		2ADEA389275DF81B00DCC06B /* StudentWeekSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentWeekSelectorView.swift; sourceTree = "<group>"; };
+		2ADEA38C275DFA0100DCC06B /* PollConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollConnectionManager.swift; sourceTree = "<group>"; };
+		2ADEA38E275E06F400DCC06B /* StudentClassroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassroomView.swift; sourceTree = "<group>"; };
+		2ADEA391275EFF8800DCC06B /* AttendanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceView.swift; sourceTree = "<group>"; };
 		2AED23B6273F26650022F108 /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
 		2AED23BD273F55BA0022F108 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		2AED23BF273F5DFA0022F108 /* TokenAddingInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAddingInterceptor.swift; sourceTree = "<group>"; };
@@ -332,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				2A82D805275AD22200919DF3 /* schema.json */,
+				2ADEA38B275DF9D600DCC06B /* multipeer */,
 				2ADEA381275D665800DCC06B /* persistence */,
 				2ADEA354275D664D00DCC06B /* poll */,
 				2ABC08C12740AA63002D7FA8 /* components */,
@@ -683,16 +692,35 @@
 		2ADEA382275DD80000DCC06B /* courses */ = {
 			isa = PBXGroup;
 			children = (
+				2ADEA389275DF81B00DCC06B /* StudentWeekSelectorView.swift */,
 				2ADEA383275DD82100DCC06B /* EnrolledCourseListView.swift */,
 				2ADEA385275DD88F00DCC06B /* EnrolledCourseListViewModel.swift */,
 				2ADEA387275DE5DC00DCC06B /* StudentClassView.swift */,
+				2ADEA38E275E06F400DCC06B /* StudentClassroomView.swift */,
 			);
 			path = courses;
+			sourceTree = "<group>";
+		};
+		2ADEA38B275DF9D600DCC06B /* multipeer */ = {
+			isa = PBXGroup;
+			children = (
+				2ADEA38C275DFA0100DCC06B /* PollConnectionManager.swift */,
+			);
+			path = multipeer;
+			sourceTree = "<group>";
+		};
+		2ADEA390275EFF6200DCC06B /* attendance */ = {
+			isa = PBXGroup;
+			children = (
+				2ADEA391275EFF8800DCC06B /* AttendanceView.swift */,
+			);
+			path = attendance;
 			sourceTree = "<group>";
 		};
 		2AEFBCAF2740B5090026B630 /* course */ = {
 			isa = PBXGroup;
 			children = (
+				2ADEA390275EFF6200DCC06B /* attendance */,
 				2ADEA34A275D4B1300DCC06B /* classroom */,
 				2ADEA347275CABAF00DCC06B /* class */,
 				2A82D809275B3BBC00919DF3 /* section */,
@@ -928,6 +956,7 @@
 				2A1AFF1A2707F855004623FA /* Actions.swift in Sources */,
 				2A37A4B3270F3DB1007C1868 /* SignUpAction.swift in Sources */,
 				2A1AFF2A270B9412004623FA /* SessionState.swift in Sources */,
+				2ADEA38D275DFA0100DCC06B /* PollConnectionManager.swift in Sources */,
 				2A82D7E4275873E800919DF3 /* SignUpState.swift in Sources */,
 				2A37A4C9270F955F007C1868 /* TeacherView.swift in Sources */,
 				2AEFBD0C274AE83C0026B630 /* ImagePickerView.swift in Sources */,
@@ -948,6 +977,8 @@
 				2A37A4AE270EAA06007C1868 /* Auth+Combine.swift in Sources */,
 				2A82D7F52758E03500919DF3 /* SearchCellUsernameView.swift in Sources */,
 				2AED23BE273F55BA0022F108 /* APIService.swift in Sources */,
+				2ADEA392275EFF8800DCC06B /* AttendanceView.swift in Sources */,
+				2ADEA38A275DF81B00DCC06B /* StudentWeekSelectorView.swift in Sources */,
 				2ADEA372275D664D00DCC06B /* CreatePoolView.swift in Sources */,
 				2A82D8042759A0DF00919DF3 /* API.swift in Sources */,
 				2A82D7E827587CC700919DF3 /* AuthenticationMiddleware.swift in Sources */,
@@ -982,6 +1013,7 @@
 				2A37A4BC270F5788007C1868 /* ForgotPasswordState.swift in Sources */,
 				2A82D7FD2758E54100919DF3 /* SearchCellSectionView.swift in Sources */,
 				2AEFBD14274B0B6F0026B630 /* SecurityView.swift in Sources */,
+				2ADEA38F275E06F400DCC06B /* StudentClassroomView.swift in Sources */,
 				2ADEA378275D664D00DCC06B /* PollModel.swift in Sources */,
 				2ADEA373275D664D00DCC06B /* TimeStepperView.swift in Sources */,
 				2ADEA384275DD82100DCC06B /* EnrolledCourseListView.swift in Sources */,

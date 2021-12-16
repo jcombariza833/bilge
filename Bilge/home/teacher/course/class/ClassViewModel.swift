@@ -17,7 +17,15 @@ class ClassViewModel: ObservableObject {
     
     @Published var pollList = [PollModel]()
     
+    @Published var startOnline = false
+    
     let persistence = PersistenceController.shared
+    
+    var username: String {
+        get {
+            "\(store?.state.api.instructor?.username ?? "")"
+        }
+    }
     
     var name: String {
         get {
@@ -34,6 +42,12 @@ class ClassViewModel: ObservableObject {
     var roomCode: String {
         get {
             "\("\(course?.code ?? "") - \(section?.code ?? "")")"
+        }
+    }
+    
+    var service: String {
+        get {
+            roomCode.lowercased().trimmingCharacters(in: .illegalCharacters).replacingOccurrences(of: " ", with: "")
         }
     }
     

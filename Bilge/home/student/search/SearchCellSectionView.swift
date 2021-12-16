@@ -29,8 +29,10 @@ struct SearchCellSectionView: View {
     
     var isEnrroled: Bool {
         get {
-            let sectionE = enrolled.first { erolledSection in
-                erolledSection.section.code == section.code
+            let sectionE = enrolled.first { enrolledC in
+                enrolledC.section.code == section.code &&
+                enrolledC.course.code == course.code &&
+                enrolledC.instructor.username == username
             }
             
             return sectionE != nil

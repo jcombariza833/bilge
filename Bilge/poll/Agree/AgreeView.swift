@@ -15,6 +15,9 @@ struct AgreeView: View {
     @State var isEditMode: EditMode = .active
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     let component: Agree
+    let preview: Bool
+    
+    var action: (() -> ())?
     
     @State private var level: Double = 0
     
@@ -27,7 +30,12 @@ struct AgreeView: View {
                                 timeRemaining -= 1
                                 timeRunning += 1.0/Float(component.time)
                             } else {
-                                presentation.toggle()
+                                if !preview {
+                                    //presentation.toggle()
+                                    if let action = action {
+                                        action()
+                                    }
+                                }
                             }
                         }
 
@@ -38,9 +46,14 @@ struct AgreeView: View {
                     color: .blue,
                     fullWidth: true) {
                 withAnimation(.easeInOut(duration: 0.4)) {
-                    let feedback = AgreeFeedBack(vote: Int(level))
-                    //send feedback
-                    presentation.toggle()
+                    if !preview {
+                        let feedback = AgreeFeedBack(vote: Int(level))
+                        //send feedback
+                        //presentation.toggle()
+                        if let action = action {
+                            action()
+                        }
+                    }
                 }
             }
             Spacer()
@@ -48,6 +61,7 @@ struct AgreeView: View {
         .padding()
         .onAppear {
             timeRemaining = component.time
+            timeRunning = 0.0
         }
     }
 }
@@ -55,6 +69,6 @@ struct AgreeView: View {
 struct AgreeView_Previews: PreviewProvider {
     static var previews: some View {
         AgreeView(presentation: .constant(true), component: Agree(question: "How clear is the lecture?",
-                                                             time: 30))
+                                                                  time: 30), preview: false)
     }
 }

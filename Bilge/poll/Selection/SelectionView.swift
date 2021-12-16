@@ -14,6 +14,8 @@ struct SelectionView: View {
     @State var isEditMode: EditMode = .active
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     let component: Selection
+    let preview: Bool
+    var action: (() -> ())?
     
     var body: some View {
         VStack {
@@ -24,7 +26,12 @@ struct SelectionView: View {
                                 timeRemaining -= 1
                                 timeRunning += 1.0/Float(component.time)
                             } else {
-                                presentation.toggle()
+                                if !preview {
+                                    //presentation.toggle()
+                                    if let action = action {
+                                        action()
+                                    }
+                                }
                             }
                         }
             Spacer()
@@ -39,12 +46,17 @@ struct SelectionView: View {
                     color: .blue,
                     fullWidth: true) {
                 withAnimation(.easeInOut(duration: 0.4)) {
-                    if let selection = selection {
-                        let feedback = SelectionFeedBack(vote: [selection: true])
-                        //send feedback
+                    if !preview {
+                        if let selection = selection {
+                            let feedback = SelectionFeedBack(vote: [selection: true])
+                            //send feedback
+                        }
+                        
+                        //presentation.toggle()
+                        if let action = action {
+                            action()
+                        }
                     }
-                    
-                    presentation.toggle()
                 }
             }
             Spacer()
@@ -52,6 +64,7 @@ struct SelectionView: View {
         .padding()
         .onAppear {
             timeRemaining = component.time
+            timeRunning = 0.0
         }
     }
 }
@@ -61,6 +74,6 @@ struct SelectionView_Previews: PreviewProvider {
         SelectionView(presentation: .constant(true),
                       component: Selection(question: "Whichone of the following is an actually animal?",
                                            time: 30,
-                                           options:["Dog", "Toaster", "Apple", "Truck"]))
+                                           options:["Dog", "Toaster", "Apple", "Truck"]), preview: false)
     }
 }

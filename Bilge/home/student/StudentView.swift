@@ -13,9 +13,7 @@ struct StudentView: View {
     @EnvironmentObject var store: AppStore
         
     var body: some View {
-        StudentTapView().onAppear {
-            store.dispatch(.api(.getInstructors(.get)))
-        }
+        StudentTapView()
     }
 }
 

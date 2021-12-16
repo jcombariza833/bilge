@@ -8,6 +8,7 @@
 import Foundation
 
 struct MultipleChoice: PollComponent {
+    
     var type: PollComponentType = .multipleChoice
     var question: String
     var time: Int

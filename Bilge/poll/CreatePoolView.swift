@@ -10,6 +10,7 @@ import Combine
 
 struct CreatePoolView: View {
     @EnvironmentObject var pollManager: PollManger
+    @ObservedObject var viewModel: ClassViewModel
     @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
@@ -76,7 +77,7 @@ struct CreatePoolView: View {
                         
                         let poll = Poll(name: pollManager.name,
                                        components: pollManager.components,
-                                       courseCode: "COSC-236", sectionCode: "101")
+                                        courseCode: viewModel.courseCode, sectionCode: viewModel.sectionCode)
                         pollManager.savePoll(poll: poll)
                     }
                     
@@ -112,16 +113,16 @@ struct CreatePoolView: View {
                                 HStack {
                                     if pollManager.components[selection].type == .statement {
                                         let component = pollManager.components[selection] as! Statement
-                                        StatementView(presentation: .constant(true), component: component)
+                                        StatementView(presentation: .constant(true), component: component, preview: true)
                                     } else if pollManager.components[selection].type == .selection {
                                         let component = pollManager.components[selection] as! Selection
-                                        SelectionView(presentation: .constant(true), component: component)
+                                        SelectionView(presentation: .constant(true), component: component, preview: true)
                                     } else if pollManager.components[selection].type == .multipleChoice {
                                         let component = pollManager.components[selection] as! MultipleChoice
-                                        MultipleChoiceView(presentation: .constant(true), component: component)
+                                        MultipleChoiceView(presentation: .constant(true), component: component, preview: true)
                                     } else if pollManager.components[selection].type == .agree {
                                         let component = pollManager.components[selection] as! Agree
-                                        AgreeView(presentation: .constant(true), component: component)
+                                        AgreeView(presentation: .constant(true), component: component, preview: true)
                                     }
                                 } .navigationBarTitle("Preview")
                             }
@@ -150,7 +151,7 @@ struct CreatePoolView: View {
 struct CreatePoolView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CreatePoolView().environmentObject(PollManger())
+            CreatePoolView(viewModel: ClassViewModel()).environmentObject(PollManger())
         }
     }
 }

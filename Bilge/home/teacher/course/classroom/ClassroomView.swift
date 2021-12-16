@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ClassroomView: View {
     @EnvironmentObject var pollManager: PollManger
     @ObservedObject var viewModel: ClassViewModel
-    
-    @State var startOnline = false
+    @EnvironmentObject var pollConnection: PollConnectionManager
     
     let columns = [
             GridItem(.adaptive(minimum: 100))
@@ -84,7 +84,7 @@ struct ClassroomView: View {
                             }
                             Spacer()
                             GButton(labelText: "Share", textColor: .white, color: .blue, fullWidth: false) {
-                                //TODO: send poll
+                                pollConnection.sendPoll(poll)
                             }
                         }
                         .padding()
@@ -103,21 +103,25 @@ struct ClassroomView: View {
         .navigationTitle("Classroom")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                GToggle(colorOn: .blue, isOn: $startOnline) {
+                GToggle(colorOn: .blue, isOn: $viewModel.startOnline) {
                     HStack {
                         Spacer()
-                        Text(startOnline ? "Online" : "Offline")
+                        Text(viewModel.startOnline ? "Online" : "Offline")
                             .font(.system(.caption))
-                            .foregroundColor(startOnline ? .green : Color("noFocus"))
+                            .foregroundColor(viewModel.startOnline ? .green : Color("noFocus"))
                     }
                 }
                 .frame(width: 280)
-                .onChange(of: startOnline) { newValue in
-                    //TODO: startonline
-                    print(newValue ? "Online" : "offline" )
+                .onChange(of: viewModel.startOnline) { newValue in
+                    if newValue {
+                        pollConnection.host()
+                    } else {
+                        pollConnection.leave()
+                    }
                 }
             }
-        }.onAppear {
+        }
+        .onAppear {
             viewModel.pollList = viewModel.pollListCaller.reversed()
         }
     }
@@ -125,13 +129,13 @@ struct ClassroomView: View {
     func activityView(activity: ActivityType) -> some View {
         switch activity {
         case .poll:
-            return AnyView(CreatePoolView())
+            return AnyView(CreatePoolView(viewModel: viewModel))
         case .coevaluation:
             return AnyView(Text("Coevaluation"))
         case .groups:
             return AnyView(Text("Groups"))
         case .attendance:
-            return AnyView(Text("Attendance"))
+            return AnyView(AttendanceView())
         case .questions:
             return AnyView(Text("Questions"))
         }

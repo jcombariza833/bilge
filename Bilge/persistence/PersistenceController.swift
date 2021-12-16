@@ -10,7 +10,7 @@ import RealmSwift
 
 class PersistenceController {
     static let shared = PersistenceController()
-    private var   database:Realm
+    private var database:Realm
     
     private init() {
         database = try! Realm()

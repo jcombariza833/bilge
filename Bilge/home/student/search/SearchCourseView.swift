@@ -13,7 +13,10 @@ struct SearchCourseView: View {
     var body: some View {
         NavigationView {
             SearchCourseContentView()
-                .navigationTitle("Users")
+                .navigationTitle("Enroll")
+                .onAppear {
+                    store.dispatch(.api(.getInstructors(.get)))
+                }
         }
     }
 }
